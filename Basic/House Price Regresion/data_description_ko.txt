@@ -1,0 +1,523 @@
+MSSubClass: 판매에 관련된 주거 유형을 식별합니다.
+
+        20 1층 1946년 및 최신 모든 스타일
+        30 1층 1945년 및 구형
+        40 1층 다락방 마감 모든 연령
+        45 1-1/2층 - 미완성 모든 연령
+        50 1-1/2층 마감 모든 연령
+        60 2층 1946년 및 최신
+        70 2층 1945년 및 구형
+        75 2-1/2층 모든 연령
+        80 분할 또는 다단계
+        85 분할 현관
+        90 듀플렉스 - 모든 스타일 및 연령
+       120 1층 PUD(계획 단위 개발) - 1946년 및 최신
+       150 1-1/2층 PUD - 모든 연령
+       160 2층 PUD - 1946년 및 최신
+       180 PUD - 다단계 - 분할 레벨/현관 포함
+       190 2가족 전환 - 모든 스타일 및 연령
+
+MSZoning: 판매의 일반적인 구역 분류를 식별합니다.
+
+       A 농업
+       C 상업
+       FV 플로팅 빌리지 주거
+       I 산업
+       RH 주거 고밀도
+       RL 주거 저밀도
+       RP 주거 저밀도 공원
+       RM 주거 중밀도
+
+LotFrontage: 부동산에 연결된 거리의 선형 피트
+
+LotArea: 평방 피트 단위의 부지 크기
+
+Street: 부동산으로의 도로 접근 유형
+
+       Grvl 자갈
+       Pave 포장
+
+Alley: 부동산으로의 골목 접근 유형
+
+       Grvl 자갈
+       Pave 포장
+       NA 골목 접근 없음
+
+LotShape: 부동산의 일반적인 모양
+
+       Reg 일반
+       IR1 약간 불규칙
+       IR2 중간 정도 불규칙
+       IR3 불규칙
+
+LandContour: 부동산의 평탄도
+
+       Lvl 거의 평평함/수평
+       Bnk 제방 - 거리 등급에서 건물까지 빠르고 상당한 상승
+       HLS 비탈 - 측면에서 측면으로 상당한 경사
+       Low 함몰
+
+Utilities: 사용 가능한 유틸리티 유형
+
+       AllPub 모든 공공 유틸리티(E,G,W,& S)
+       NoSewr 전기, 가스 및 수도(정화조)
+       NoSeWa 전기 및 가스만
+       ELO 전기만
+
+LotConfig: 부지 구성
+
+       Inside 내부 부지
+       Corner 코너 부지
+       CulDSac 막다른 골목
+       FR2 부동산의 2면에 접함
+       FR3 부동산의 3면에 접함
+
+LandSlope: 부동산의 경사
+
+       Gtl 완만한 경사
+       Mod 보통 경사
+       Sev 심한 경사
+
+Neighborhood: 에임스 시 경계 내의 물리적 위치
+
+       Blmngtn 블루밍턴 하이츠
+       Blueste 블루스템
+       BrDale 브라이어데일
+       BrkSide 브룩사이드
+       ClearCr 클리어 크릭
+       CollgCr 칼리지 크릭
+       Crawfor 크로포드
+       Edwards 에드워즈
+       Gilbert 길버트
+       IDOTRR 아이오와 DOT 및 철도
+       MeadowV 메도우 빌리지
+       Mitchel 미첼
+       Names 노스 에임스
+       NoRidge 노스리지
+       NPkVill 노스파크 빌라
+       NridgHt 노스리지 하이츠
+       NWAmes 노스웨스트 에임스
+       OldTown 올드 타운
+       SWISU 아이오와 주립대학교 남서쪽
+       Sawyer 소여
+       SawyerW 소여 웨스트
+       Somerst 서머셋
+       StoneBr 스톤 브룩
+       Timber 팀버랜드
+       Veenker 빈커
+
+Condition1: 다양한 조건에 대한 근접성
+
+       Artery 간선 도로에 인접
+       Feedr 지선 도로에 인접
+       Norm 보통
+       RRNn 남북 철도 200피트 이내
+       RRAn 남북 철도에 인접
+       PosN 긍정적인 외부 시설(공원, 녹지 등) 근처
+       PosA 긍정적인 외부 시설에 인접
+       RRNe 동서 철도 200피트 이내
+       RRAe 동서 철도에 인접
+
+Condition2: 다양한 조건에 대한 근접성(둘 이상인 경우)
+
+       Artery 간선 도로에 인접
+       Feedr 지선 도로에 인접
+       Norm 보통
+       RRNn 남북 철도 200피트 이내
+       RRAn 남북 철도에 인접
+       PosN 긍정적인 외부 시설(공원, 녹지 등) 근처
+       PosA 긍정적인 외부 시설에 인접
+       RRNe 동서 철도 200피트 이내
+       RRAe 동서 철도에 인접
+
+BldgType: 주거 유형
+
+       1Fam 단독 주택
+       2FmCon 2가족 전환, 원래 단독 주택으로 지어짐
+       Duplx 듀플렉스
+       TwnhsE 타운하우스 끝 유닛
+       TwnhsI 타운하우스 내부 유닛
+
+HouseStyle: 주거 스타일
+
+       1Story 1층
+       1.5Fin 1.5층: 2층 마감
+       1.5Unf 1.5층: 2층 미완성
+       2Story 2층
+       2.5Fin 2.5층: 2층 마감
+       2.5Unf 2.5층: 2층 미완성
+       SFoyer 분할 현관
+       SLvl 분할 레벨
+
+OverallQual: 주택의 전반적인 자재 및 마감재 평가
+
+       10 매우 우수
+       9 우수
+       8 매우 좋음
+       7 좋음
+       6 평균 이상
+       5 평균
+       4 평균 이하
+       3 보통
+       2 나쁨
+       1 매우 나쁨
+
+OverallCond: 주택의 전반적인 상태 평가
+
+       10 매우 우수
+       9 우수
+       8 매우 좋음
+       7 좋음
+       6 평균 이상
+       5 평균
+       4 평균 이하
+       3 보통
+       2 나쁨
+       1 매우 나쁨
+
+YearBuilt: 최초 건축일
+
+YearRemodAdd: 리모델링 날짜(리모델링이나 증축이 없는 경우 건축 날짜와 동일)
+
+RoofStyle: 지붕 유형
+
+       Flat 평평함
+       Gable 박공
+       Gambrel 박공(헛간)
+       Hip 힙
+       Mansard 맨사드
+       Shed 헛간
+
+RoofMatl: 지붕 자재
+
+       ClyTile 점토 또는 타일
+       CompShg 표준 (복합) 지붕널
+       Membran 멤브레인
+       Metal 금속
+       Roll 롤
+       Tar&Grv 자갈 및 타르
+       WdShake 나무 셰이크
+       WdShngl 나무 지붕널
+
+Exterior1st: 주택의 외부 마감재
+
+       AsbShng 석면 지붕널
+       AsphShn 아스팔트 지붕널
+       BrkComm 일반 벽돌
+       BrkFace 벽돌 면
+       CBlock 시멘트 블록
+       CemntBd 시멘트 보드
+       HdBoard 하드 보드
+       ImStucc 모조 스터코
+       MetalSd 금속 사이딩
+       Other 기타
+       Plywood 합판
+       PreCast 프리캐스트
+       Stone 석재
+       Stucco 스터코
+       VinylSd 비닐 사이딩
+       Wd Sdng 목재 사이딩
+       WdShing 목재 지붕널
+
+Exterior2nd: 주택의 외부 마감재(둘 이상의 자재인 경우)
+
+       AsbShng 석면 지붕널
+       AsphShn 아스팔트 지붕널
+       BrkComm 일반 벽돌
+       BrkFace 벽돌 면
+       CBlock 시멘트 블록
+       CemntBd 시멘트 보드
+       HdBoard 하드 보드
+       ImStucc 모조 스터코
+       MetalSd 금속 사이딩
+       Other 기타
+       Plywood 합판
+       PreCast 프리캐스트
+       Stone 석재
+       Stucco 스터코
+       VinylSd 비닐 사이딩
+       Wd Sdng 목재 사이딩
+       WdShing 목재 지붕널
+
+MasVnrType: 석조 베니어 유형
+
+       BrkCmn 일반 벽돌
+       BrkFace 벽돌 면
+       CBlock 시멘트 블록
+       None 없음
+       Stone 석재
+
+MasVnrArea: 평방 피트 단위의 석조 베니어 면적
+
+ExterQual: 외부 자재의 품질 평가
+
+       Ex 우수
+       Gd 좋음
+       TA 평균/일반
+       Fa 보통
+       Po 나쁨
+
+ExterCond: 외부 자재의 현재 상태 평가
+
+       Ex 우수
+       Gd 좋음
+       TA 평균/일반
+       Fa 보통
+       Po 나쁨
+
+Foundation: 기초 유형
+
+       BrkTil 벽돌 및 타일
+       CBlock 시멘트 블록
+       PConc 타설 콘크리트
+       Slab 슬래브
+       Stone 석재
+       Wood 목재
+
+BsmtQual: 지하실 높이 평가
+
+       Ex 우수 (100인치 이상)
+       Gd 좋음 (90-99인치)
+       TA 일반 (80-89인치)
+       Fa 보통 (70-79인치)
+       Po 나쁨 (<70인치)
+       NA 지하실 없음
+
+BsmtCond: 지하실의 일반적인 상태 평가
+
+       Ex 우수
+       Gd 좋음
+       TA 일반 - 약간의 습기 허용
+       Fa 보통 - 습기 또는 약간의 균열 또는 침하
+       Po 나쁨 - 심각한 균열, 침하 또는 습기
+       NA 지하실 없음
+
+BsmtExposure: 워크아웃 또는 가든 레벨 벽 참조
+
+       Gd 좋은 노출
+       Av 평균 노출 (분할 레벨 또는 현관은 일반적으로 평균 이상 점수)
+       Mn 최소 노출
+       No 노출 없음
+       NA 지하실 없음
+
+BsmtFinType1: 지하실 마감 면적 등급
+
+       GLQ 좋은 생활 공간
+       ALQ 평균 생활 공간
+       BLQ 평균 이하 생활 공간
+       Rec 평균 레크리에이션 룸
+       LwQ 낮은 품질
+       Unf 미완성
+       NA 지하실 없음
+
+BsmtFinSF1: 유형 1 마감 평방 피트
+
+BsmtFinType2: 지하실 마감 면적 등급(여러 유형인 경우)
+
+       GLQ 좋은 생활 공간
+       ALQ 평균 생활 공간
+       BLQ 평균 이하 생활 공간
+       Rec 평균 레크리에이션 룸
+       LwQ 낮은 품질
+       Unf 미완성
+       NA 지하실 없음
+
+BsmtFinSF2: 유형 2 마감 평방 피트
+
+BsmtUnfSF: 지하실 미완성 평방 피트 면적
+
+TotalBsmtSF: 지하실 총 평방 피트 면적
+
+Heating: 난방 유형
+
+       Floor 바닥 난방기
+       GasA 가스 강제 온풍 난방기
+       GasW 가스 온수 또는 증기 난방
+       Grav 중력 난방기
+       OthW 가스 이외의 온수 또는 증기 난방
+       Wall 벽 난방기
+
+HeatingQC: 난방 품질 및 상태
+
+       Ex 우수
+       Gd 좋음
+       TA 평균/일반
+       Fa 보통
+       Po 나쁨
+
+CentralAir: 중앙 에어컨
+
+       N 아니요
+       Y 예
+
+Electrical: 전기 시스템
+
+       SBrkr 표준 회로 차단기 및 로멕스
+       FuseA 60 AMP 이상 퓨즈 박스 및 모든 로멕스 배선(평균)
+       FuseF 60 AMP 퓨즈 박스 및 대부분 로멕스 배선(보통)
+       FuseP 60 AMP 퓨즈 박스 및 대부분 손잡이 및 튜브 배선(나쁨)
+       Mix 혼합
+
+1stFlrSF: 1층 평방 피트
+
+2ndFlrSF: 2층 평방 피트
+
+LowQualFinSF: 낮은 품질의 마감 평방 피트(모든 층)
+
+GrLivArea: 지상 생활 면적 평방 피트
+
+BsmtFullBath: 지하실 전체 욕실
+
+BsmtHalfBath: 지하실 반 욕실
+
+FullBath: 지상 전체 욕실
+
+HalfBath: 지상 반 욕실
+
+Bedroom: 지상 침실(지하실 침실 제외)
+
+Kitchen: 지상 주방
+
+KitchenQual: 주방 품질
+
+       Ex 우수
+       Gd 좋음
+       TA 일반/평균
+       Fa 보통
+       Po 나쁨
+
+TotRmsAbvGrd: 지상 총 방 수(욕실 제외)
+
+Functional: 주택 기능성(공제가 보증되지 않는 한 일반으로 가정)
+
+       Typ 일반 기능성
+       Min1 경미한 공제 1
+       Min2 경미한 공제 2
+       Mod 보통 공제
+       Maj1 주요 공제 1
+       Maj2 주요 공제 2
+       Sev 심하게 손상됨
+       Sal 인양만 가능
+
+Fireplaces: 벽난로 수
+
+FireplaceQu: 벽난로 품질
+
+       Ex 우수 - 뛰어난 석조 벽난로
+       Gd 좋음 - 주층에 석조 벽난로
+       TA 평균 - 주 거실에 조립식 벽난로 또는 지하실에 석조 벽난로
+       Fa 보통 - 지하실에 조립식 벽난로
+       Po 나쁨 - 벤 프랭클린 스토브
+       NA 벽난로 없음
+
+GarageType: 차고 위치
+
+       2Types 둘 이상의 차고 유형
+       Attchd 주택에 부속
+       Basment 지하실 차고
+       BuiltIn 빌트인(차고가 주택의 일부 - 일반적으로 차고 위에 방이 있음)
+       CarPort 카 포트
+       Detchd 주택에서 분리
+       NA 차고 없음
+
+GarageYrBlt: 차고 건축 연도
+
+GarageFinish: 차고 내부 마감
+
+       Fin 마감
+       RFn 거친 마감
+       Unf 미완성
+       NA 차고 없음
+
+GarageCars: 차량 수용 능력 단위의 차고 크기
+
+GarageArea: 평방 피트 단위의 차고 크기
+
+GarageQual: 차고 품질
+
+       Ex 우수
+       Gd 좋음
+       TA 일반/평균
+       Fa 보통
+       Po 나쁨
+       NA 차고 없음
+
+GarageCond: 차고 상태
+
+       Ex 우수
+       Gd 좋음
+       TA 일반/평균
+       Fa 보통
+       Po 나쁨
+       NA 차고 없음
+
+PavedDrive: 포장된 진입로
+
+       Y 포장
+       P 부분 포장
+       N 흙/자갈
+
+WoodDeckSF: 평방 피트 단위의 목재 데크 면적
+
+OpenPorchSF: 평방 피트 단위의 개방형 현관 면적
+
+EnclosedPorch: 평방 피트 단위의 밀폐형 현관 면적
+
+3SsnPorch: 평방 피트 단위의 3계절 현관 면적
+
+ScreenPorch: 평방 피트 단위의 스크린 현관 면적
+
+PoolArea: 평방 피트 단위의 수영장 면적
+
+PoolQC: 수영장 품질
+
+       Ex 우수
+       Gd 좋음
+       TA 일반/평균
+       Fa 보통
+       NA 수영장 없음
+
+Fence: 울타리 품질
+
+       GdPrv 좋은 프라이버시
+       MnPrv 최소 프라이버시
+       GdWo 좋은 목재
+       MnWw 최소 목재/철사
+       NA 울타리 없음
+
+MiscFeature: 다른 범주에서 다루지 않은 기타 기능
+
+       Elev 엘리베이터
+       Gar2 두 번째 차고(차고 섹션에 설명되지 않은 경우)
+       Othr 기타
+       Shed 헛간(100 SF 이상)
+       TenC 테니스 코트
+       NA 없음
+
+MiscVal: 기타 기능의 가치($)
+
+MoSold: 판매 월(MM)
+
+YrSold: 판매 연도(YYYY)
+
+SaleType: 판매 유형
+
+       WD 보증 증서 - 일반
+       CWD 보증 증서 - 현금
+       VWD 보증 증서 - VA 대출
+       New 방금 건설되어 판매된 주택
+       COD 법원 공무원 증서/유산
+       Con 계약 15% 계약금 일반 조건
+       ConLw 계약 낮은 계약금 및 낮은 이자
+       ConLI 계약 낮은 이자
+       ConLD 계약 낮은 계약금
+       Oth 기타
+
+SaleCondition: 판매 조건
+
+       Normal 일반 판매
+       Abnorml 비정상적인 판매 - 거래, 압류, 숏세일
+       AdjLand 인접 토지 구매
+       Alloca 할당 - 별도의 증서가 있는 두 개의 연결된 부동산, 일반적으로 차고 유닛이 있는 콘도
+       Family 가족 간의 판매
+       Partial 마지막 평가 시 주택이 완공되지 않음(새 주택과 관련됨)
