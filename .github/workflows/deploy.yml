@@ -29,6 +29,14 @@ jobs:
       - name: Install Notebook Dependencies
         run: |
           pip install jupyter-client ipykernel pandas matplotlib seaborn
+          python -m ipykernel install --user
+
+      - name: Debug Environment
+        run: |
+          mdbook --version
+          mdbook-jupyter --version
+          jupyter --version
+          jupyter kernelspec list
 
       - name: Sync Files to src
         run: |
@@ -64,6 +72,8 @@ jobs:
 
       - name: Build mdBook
         run: mdbook build
+        env:
+          MDBOOK_LOG: debug
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

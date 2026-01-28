@@ -5,4 +5,6 @@ src = "src"
 title = "Data Science Projects"
 
 [preprocessor.jupyter]
-# This enables ipynb rendering
+command = "mdbook-jupyter"
+assets_priority = true
+execute = false
