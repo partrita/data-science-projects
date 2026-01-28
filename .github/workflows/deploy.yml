@@ -1,0 +1,65 @@
+name: Deploy mdBook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: 'latest'
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install mdbook-jupyter and dependencies
+        run: |
+          pip install mdbook-jupyter jupyter-client ipykernel
+          # Add common data science libs to ensure rendering works if needed
+          pip install pandas matplotlib seaborn
+
+      - name: Sync Files to src
+        run: |
+          mkdir -p src/notebooks/basic
+          mkdir -p src/notebooks/transformation
+          
+          # Copy READMEs
+          cp README_ko.md src/README.md
+          cp "Data Preprocessing, Cleaning & Transformation/README_ko.md" src/transformation.md
+          
+          # Copy and rename notebooks (removing spaces)
+          cp "Basic/Iris dataset/Iris_final.ipynb" src/notebooks/basic/Iris_final.ipynb
+          cp "Basic/House Price Regresion/Project 2 P1 House Price Regression.ipynb" src/notebooks/basic/Project_2_P1_House_Price_Regression.ipynb
+          cp "Basic/House Price Regresion/Project 2 P2 House Price Regression.ipynb" src/notebooks/basic/Project_2_P2_House_Price_Regression.ipynb
+          
+          cp "Data Preprocessing, Cleaning & Transformation/Diabetes Detection and Analysis/DiabetesDetection.ipynb" src/notebooks/transformation/DiabetesDetection.ipynb
+          cp "Data Preprocessing, Cleaning & Transformation/USA_Bitly_dataset/bitly_data.ipynb" src/notebooks/transformation/bitly_data.ipynb
+          cp "Data Preprocessing, Cleaning & Transformation/BabyNames dataset/baby_names_USA_dataset.ipynb" src/notebooks/transformation/baby_names_USA_dataset.ipynb
+          cp "Data Preprocessing, Cleaning & Transformation/MovieLens Dataset/movielens_dataset.ipynb" src/notebooks/transformation/movielens_dataset.ipynb
+          cp "Data Preprocessing, Cleaning & Transformation/Stack Overflow survey analysis/Stack_Overflow_dev_type_survey.ipynb" src/notebooks/transformation/Stack_Overflow_dev_type_survey.ipynb
+          cp "Data Preprocessing, Cleaning & Transformation/USDA food database/USDA_food_database.ipynb" src/notebooks/transformation/USDA_food_database.ipynb
+          cp "Data Preprocessing, Cleaning & Transformation/2012 FEC database/fec_data.ipynb" src/notebooks/transformation/fec_data.ipynb
+
+      - name: Build mdBook
+        run: mdbook build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
