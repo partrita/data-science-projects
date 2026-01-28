@@ -16,78 +16,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Tools (mdBook & mdbook-jupyter)
-        uses: taiki-e/install-action@v2
+      - name: Install mdBook
+        uses: peaceiris/actions-mdbook@v2
         with:
-          tool: mdbook,mdbook-jupyter
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Notebook Dependencies
-        run: |
-          pip install jupyter-client ipykernel pandas matplotlib seaborn
-          python -m ipykernel install --user
-
-      - name: Debug Environment
-        run: |
-          mdbook --version
-          mdbook-jupyter --version
-          jupyter --version
-          jupyter kernelspec list
+          mdbook-version: 'latest'
 
       - name: Sync Files to src
         run: |
-          mkdir -p src/notebooks/basic
-          mkdir -p src/notebooks/transformation
-          
-          # Copy READMEs and transform links for mdBook
-          cat README_ko.md | sed 's|Basic/Iris%20dataset/|notebooks/basic/|g' | sed 's|Basic/House%20Price%20Regresion/|notebooks/basic/|g' > src/README.md
-          cat "Data Preprocessing, Cleaning & Transformation/README_ko.md" | sed 's|\./|notebooks/transformation/|g' > src/transformation.md
-          
-          # Create Index files for categories
-          echo "# 기본 프로젝트" > src/notebooks/basic/index.md
-          echo "기본적인 머신러닝 및 데이터 분석 프로젝트 목록입니다." >> src/notebooks/basic/index.md
-          echo "# 데이터 전처리 및 분석" > src/notebooks/transformation/index.md
-          echo "다양한 데이터셋을 활용한 전처리 및 분석 프로젝트 목록입니다." >> src/notebooks/transformation/index.md
-          
-          # Copy and rename notebooks (removing spaces)
-          cp "Basic/Iris dataset/Iris_final.ipynb" src/notebooks/basic/Iris_final.ipynb
-          cp "Basic/House Price Regresion/Project 2 P1 House Price Regression.ipynb" src/notebooks/basic/Project_2_P1_House_Price_Regression.ipynb
-          cp "Basic/House Price Regresion/Project 2 P2 House Price Regression.ipynb" src/notebooks/basic/Project_2_P2_House_Price_Regression.ipynb
-          
-          cp "Data Preprocessing, Cleaning & Transformation/Diabetes Detection and Analysis/DiabetesDetection.ipynb" src/notebooks/transformation/DiabetesDetection.ipynb
-          cp "Data Preprocessing, Cleaning & Transformation/USA_Bitly_dataset/bitly_data.ipynb" src/notebooks/transformation/bitly_data.ipynb
-          cp "Data Preprocessing, Cleaning & Transformation/BabyNames dataset/baby_names_USA_dataset.ipynb" src/notebooks/transformation/baby_names_USA_dataset.ipynb
-          cp "Data Preprocessing, Cleaning & Transformation/MovieLens Dataset/movielens_dataset.ipynb" src/notebooks/transformation/movielens_dataset.ipynb
-          cp "Data Preprocessing, Cleaning & Transformation/Stack Overflow survey analysis/Stack_Overflow_dev_type_survey.ipynb" src/notebooks/transformation/Stack_Overflow_dev_type_survey.ipynb
-          cp "Data Preprocessing, Cleaning & Transformation/USDA food database/USDA_food_database.ipynb" src/notebooks/transformation/USDA_food_database.ipynb
-          cp "Data Preprocessing, Cleaning & Transformation/2012 FEC database/fec_data.ipynb" src/notebooks/transformation/fec_data.ipynb
-
-      - name: Strip Notebook Outputs
-        run: |
-          pip install nbformat
-          python -c "
-          import nbformat
-          import os
-          for root, dirs, files in os.walk('src/notebooks'):
-              for file in files:
-                  if file.endswith('.ipynb'):
-                      path = os.path.join(root, file)
-                      print(f'Stripping {path}')
-                      nb = nbformat.read(path, as_version=4)
-                      for cell in nb.cells:
-                          if 'outputs' in cell:
-                              cell['outputs'] = []
-                          if 'execution_count' in cell:
-                              cell['execution_count'] = None
-                      nbformat.write(nb, path)
-          "
-      
-      - name: Check File Sizes
-        run: ls -lh src/notebooks/basic/ src/notebooks/transformation/
+          # Copy READMEs
+          # Transform links to point to GitHub repo for notebooks instead of local relative paths (optional but good for docs)
+          # OR just copy them as is, but links to .ipynb won't render in mdbook.
+          # For now, let's just copy the texts.
+          cp README_ko.md src/README.md
+          cp "Data Preprocessing, Cleaning & Transformation/README_ko.md" src/transformation.md
 
       - name: Build mdBook
         run: mdbook build
