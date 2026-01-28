@@ -16,10 +16,10 @@ This is a compiled list of different project topics for learning purposes. The m
 | 2 | Fake News detection | [Detecting Fake News](https://data-flair.training/blogs/advanced-python-project-detecting-fake-news/) | ☐ |
 | 3 | Detecting Parkinsons | [XGBoost](https://data-flair.training/blogs/python-machine-learning-project-detecting-parkinson-disease/), [OpenCV](https://www.pyimagesearch.com/2019/04/29/detecting-parkinsons-disease-with-opencv-computer-vision-and-the-spiral-wave-test/) | ☐ |
 | 4 | Color Detection | [OpenCV Project](https://data-flair.training/blogs/project-in-python-colour-detection/) | ☐ |
-| 5 | Iris Data Set | [Classification](https://repl.it/@LakshayArora1/Iris-Dataset-Logistic-Regression) | ☑ |
+| 5 | Iris Data Set | [Classification](./Basic/Iris%20dataset/Iris_final.ipynb) | ☑ |
 | 6 | Loan Prediction | [Approval Prediction](https://repl.it/@LakshayArora1/Logistic-Regression-Loan-Dataset) | ☐ |
 | 7 | BigMart Sales | [Sales Prediction](https://repl.it/@LakshayArora1/Linear-Regression) | ☐ |
-| 8 | House Price Regression | [Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/notebooks) | ☑ |
+| 8 | House Price Regression | [Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/notebooks), [P1](./Basic/House%20Price%20Regresion/Project%202%20P1%20House%20Price%20Regression.ipynb), [P2](./Basic/House%20Price%20Regresion/Project%202%20P2%20House%20Price%20Regression.ipynb) | ☑ |
 | 9 | Wine quality | [Quality Prediction](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009/kernels) | ☐ |
 | 10 | Heights and Weights | [Height/Weight Prediction](https://www3.nd.edu/~steve/computing_with_data/2_Motivation/motivate_ht_wt.html) | ☐ |
 | 11 | Email Classification | [Youtube](https://www.youtube.com/watch?v=exHwwy9kVcg) | ☐ |

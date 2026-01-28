@@ -14,10 +14,10 @@
 | 2 | 가짜 뉴스 탐지 | [가짜 뉴스 탐지](https://data-flair.training/blogs/advanced-python-project-detecting-fake-news/) | ☐ |
 | 3 | 파킨슨병 탐지 | [XGBoost 이용](https://data-flair.training/blogs/python-machine-learning-project-detecting-parkinson-disease/), [OpenCV 이용](https://www.pyimagesearch.com/2019/04/29/detecting-parkinsons-disease-with-opencv-computer-vision-and-the-spiral-wave-test/) | ☐ |
 | 4 | 색상 감지 | [OpenCV 프로젝트](https://data-flair.training/blogs/project-in-python-colour-detection/) | ☐ |
-| 5 | 붓꽃 데이터 세트 | [분류 예측](https://repl.it/@LakshayArora1/Iris-Dataset-Logistic-Regression) | ☑ |
+| 5 | 붓꽃 데이터 세트 | [분류 예측](./Basic/Iris%20dataset/Iris_final.ipynb) | ☑ |
 | 6 | 대출 예측 | [승인 여부 예측](https://repl.it/@LakshayArora1/Logistic-Regression-Loan-Dataset) | ☐ |
 | 7 | BigMart 판매 데이터셋 | [상점 판매량 예측](https://repl.it/@LakshayArora1/Linear-Regression) | ☐ |
-| 8 | 주택 가격 회귀 | [Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/notebooks) | ☑ |
+| 8 | 주택 가격 회귀 | [Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/notebooks), [P1](./Basic/House%20Price%20Regresion/Project%202%20P1%20House%20Price%20Regression.ipynb), [P2](./Basic/House%20Price%20Regresion/Project%202%20P2%20House%20Price%20Regression.ipynb) | ☑ |
 | 9 | 와인 품질 | [품질 예측](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009/kernels) | ☐ |
 | 10 | 키/몸무게 예측 | [키 대 몸무게 연구](https://www3.nd.edu/~steve/computing_with_data/2_Motivation/motivate_ht_wt.html) | ☐ |
 | 11 | 이메일 분류 | [YouTube 가이드](https://www.youtube.com/watch?v=exHwwy9kVcg) | ☐ |

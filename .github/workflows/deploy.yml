@@ -35,9 +35,19 @@ jobs:
           mkdir -p src/notebooks/basic
           mkdir -p src/notebooks/transformation
           
-          # Copy READMEs
-          cp README_ko.md src/README.md
-          cp "Data Preprocessing, Cleaning & Transformation/README_ko.md" src/transformation.md
+          # Copy READMEs and transform links for mdBook
+          # Root README links: Basic/... -> notebooks/basic/...
+          cat README_ko.md | sed 's|Basic/Iris%20dataset/|notebooks/basic/|g' | sed 's|Basic/House%20Price%20Regresion/|notebooks/basic/|g' > src/README.md
+          
+          # Transformation README links: ./... -> notebooks/transformation/...
+          cat "Data Preprocessing, Cleaning & Transformation/README_ko.md" | sed 's|\./|notebooks/transformation/|g' > src/transformation.md
+          
+          # Create Index files for categories
+          echo "# 기본 프로젝트" > src/notebooks/basic/index.md
+          echo "기본적인 머신러닝 및 데이터 분석 프로젝트 목록입니다." >> src/notebooks/basic/index.md
+          
+          echo "# 데이터 전처리 및 분석" > src/notebooks/transformation/index.md
+          echo "다양한 데이터셋을 활용한 전처리 및 분석 프로젝트 목록입니다." >> src/notebooks/transformation/index.md
           
           # Copy and rename notebooks (removing spaces)
           cp "Basic/Iris dataset/Iris_final.ipynb" src/notebooks/basic/Iris_final.ipynb
