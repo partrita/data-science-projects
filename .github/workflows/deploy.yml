@@ -16,21 +16,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v2
+      - name: Install Tools (mdBook & mdbook-jupyter)
+        uses: taiki-e/install-action@v2
         with:
-          mdbook-version: 'latest'
+          tool: mdbook,mdbook-jupyter
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install mdbook-jupyter and dependencies
+      - name: Install Notebook Dependencies
         run: |
-          pip install mdbook-jupyter jupyter-client ipykernel
-          # Add common data science libs to ensure rendering works if needed
-          pip install pandas matplotlib seaborn
+          pip install jupyter-client ipykernel pandas matplotlib seaborn
 
       - name: Sync Files to src
         run: |
